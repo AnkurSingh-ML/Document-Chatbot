@@ -1,12 +1,12 @@
-import fitz  # PyMuPDF
+import pymupdf  # PyMuPDF
 import docx
 import pptx
 import pandas as pd
 
 
 def load_text_from_pdf(file_path):
-    doc = fitz.open(file_path)
-    return "\n".join([page.get_text() for page in doc])
+    doc = pymupdf.open(file_path)
+    return "\n".join([page.get_text("text").strip() for page in doc])
 
 
 def load_text_from_docx(file_path):
