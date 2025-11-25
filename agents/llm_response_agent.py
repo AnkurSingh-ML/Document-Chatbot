@@ -15,7 +15,7 @@ def run_llm_response_agent():
 
         # Use Groq API to generate response
         response = client.chat.completions.create(
-            model=LLM_MODEL,  # This will be llama3-8b-8192 from .env
+            model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}]
         )
 
